@@ -2,10 +2,9 @@
 
 Um projeto estruturado com foco em programação orientada a objetos, organização de código e aplicação de boas práticas em Python.
 
-[desenvolvido por: Kaique Wilson](https://img.shields.io/badge/desenvolvido-Kaique%20Wilson-blue)
-[status: Em Desenvolvimento](https://img.shields.io/badge/status-desenvolvimento-brown)
-
-linguagem:  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aarch64/aarch64-original.svg" width =10 height =10 />
+![Status](https://img.shields.io/badge/status-Em%20Desenvolvimento-yellow)
+![Desenvolvedor](https://img.shields.io/badge/desenvolvedor-Kaique%20Wilson-blue)
+![Linguagem](https://img.shields.io/badge/linguagem-Python-blue?logo=python&logoColor=white)
           
 
 🚀 Sobre o Projeto
