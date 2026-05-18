@@ -3,7 +3,7 @@
 #------------------------------------------------------
 
 
-from modelo.avaliacao import Avaliacao
+from avaliacao import Avaliacao
 
 
 class Restaurante :
