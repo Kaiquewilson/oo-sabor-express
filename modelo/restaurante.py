@@ -4,7 +4,7 @@
 
 
 from avaliacao import Avaliacao
-
+from cardapio.item_cardapio import ItemCardapio
 
 class Restaurante :
     restaurantes =[]
@@ -14,6 +14,7 @@ class Restaurante :
         self._categoria = categoria.upper()
         self._status = False
         self._avaliacao = []
+        self._cardapio = []
         Restaurante.restaurantes.append(self)
 
     def __str__(self):                            #__str__ é um método mágico que é chamado quando se tenta imprimir um objeto da classe
@@ -46,20 +47,29 @@ class Restaurante :
     def ativo(self):
         return '☑ Ativo' if self._status else '☐ Inativo'
     
+    
 
-    #--------------------------------------------------------------------------------------
+    #---------------------------------------ATIVO / INATIVO-----------------------------------------------
     # Agora eu vou criar uma função referente ao objeto e não a classe. 
 
     def atualizar_status(self):
         self._status = not self._status         # Esse é um recurso do python que inverte o valor. Famoso efeito booleano.
 
+     #--------------------------------------------------------------------------------------
 
-    #--------------------------------------------------------------------------------------
+
+
+
+
+
+    #--------------------------------------AVALIAÇÃO------------------------------------------------
     
     def receber_avaliacao(self, cliente, nota):
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
 
+
+    #--------------------------------------------------------------------------------------
 
     @property
     def media_das_avaliacoes(self):
@@ -71,6 +81,34 @@ class Restaurante :
             return 5
         else:
             return media
+
+
+ #--------------------------------------------------------------------------------------
+
+
+
+
+
+  #---------------------------------------CARDÁPIO-----------------------------------------------
+    def adicionar_item_cardapio(self, item):
+        if isinstance(item, ItemCardapio):
+            self._cardapio.append(item)
+
+
+    @property
+    def exibir_cardapio(self):
+        print(f'Cardápio do restaurante {self._nome}\n')
+        for i,item in enumerate(self._cardapio, start = 1):
+            
+            if hasattr(item, 'descricao'):
+                mensagem_prato = f'{i}. nome: {item._nome} | preço: R${item._preco:.2f} | descrição: {item.descricao}'
+                print(mensagem_prato) 
+            else:
+                mensagem_bebida = f'{i}. nome: {item._nome} | preço: R${item._preco:.2f} | tamanho: {item.tamanho}'
+                print(mensagem_bebida)
+    
+
+
 
 
 
